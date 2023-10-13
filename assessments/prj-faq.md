@@ -32,4 +32,9 @@
 
 ---
 
+**Q: When will I have to evidence a contribution to the project?**
+**A:** The project is divided into a KBA and a practical assessment. You will have to evidence your contributions in the practical assessment. The KBA is a written assessment that will test your knowledge of the open-source contribution process.
+
+---
+
 Remember, the goal of this assessment is to familiarize yourself with the open-source contribution process and learn along the way. Don't hesitate to ask questions and seek guidance whenever needed.
