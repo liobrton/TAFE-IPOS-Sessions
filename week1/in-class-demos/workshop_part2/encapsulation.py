@@ -1,4 +1,3 @@
-
 # Encapsulation
 # the practice of hiding the internal details of an object from the outside world. 
 # we can achieve encapsulation by using classes and access modifiers. 
