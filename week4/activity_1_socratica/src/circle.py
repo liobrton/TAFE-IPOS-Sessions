@@ -8,6 +8,8 @@ def circle_area(r):
     # after running unit tests uncomment these lines then progress to adding in the snippet
     if r < 0:
         raise ValueError("Radius cannot be negative.")
+    if type(r) not in [int, float]:
+        raise TypeError("The radius must be a non-negative real number")
 
     return pi * r**2
 
