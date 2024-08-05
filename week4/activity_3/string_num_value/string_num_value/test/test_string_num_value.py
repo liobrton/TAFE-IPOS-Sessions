@@ -35,15 +35,29 @@ class TestStringNumValue(unittest.TestCase):
 
         # Expected comes first, then the actual value
         self.assertEqual(9, self.uut.value)
+        ...
 
     def test_appending_a_single_character_should_return_its_value(self):
         # We use append to add a character to the initially empty string
+        self.uut.append('a')
+
+        self.assertEqual(1, self.uut.value)
         pass
 
     def test_appending_multiple_characters_should_return_combined_value(self):
+        self.uut.append('a')
+        self.uut.append('a')
+        self.uut.append('b')
+        self.uut.append('a')
+
+        self.assertEqual(5, self.uut.value)
         pass
 
     def test_unsupported_characters_should_not_count(self):
+        self.assertRaises(TypeError, self.uut.append, '$')
+        self.assertRaises(TypeError, self.uut.set, '$^%&*^(^)&))(&(^*%&$&$&*^*^()_+"""":::::')
+        self.assertRaises(TypeError, self.uut.set, '6789040$jgjgl')
+        self.assertRaises(TypeError, self.uut.append, '8999668&')
         pass
 
     def test_what_more_can_you_think_of_to_test(self):

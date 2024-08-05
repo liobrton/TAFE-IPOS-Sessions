@@ -1,3 +1,14 @@
+def is_valid_string(s):
+    """
+    Validate that the string inputted has no special characters.
+    :param s: String
+    """
+    for char in s:
+        if char.isnumeric() is False and char.isalpha() is False:
+            return False
+    return True
+
+
 class StringNumValue:
     """
     This class calculates the numeric value of any string. It can be
@@ -23,7 +34,10 @@ class StringNumValue:
     implemented and is part of the exercise!**
     """
     def __init__(self, s=''):
-        self.s = s
+        if is_valid_string(s):
+            self.string = s
+        else:
+            raise TypeError("String can only be comprised of numeric or alphabetical characters.")
 
     @property
     def value(self):
@@ -33,7 +47,19 @@ class StringNumValue:
 
         :return: The numeric value of the string
         """
-        return ord(self.s) - ord('0') if len(self.s) else 0
+
+        return_value = 0
+        UNICODE_START = 96
+
+        for char in self.string:
+            if char.isnumeric():
+                char = int(char)
+            else:
+                char = ord(char.lower()) - UNICODE_START
+            return_value = return_value + char
+
+        return return_value
+        # return ord(self.string) - ord('0') if len(self.string) else 0
 
     def set(self, s):
         """
@@ -41,12 +67,22 @@ class StringNumValue:
 
         :param s: String to write
         """
-        self.s = s
+        if is_valid_string(s):
+            self.string = s
+        else:
+            raise TypeError("String can only be comprised of numeric or alphabetical characters.")
 
-    def append(self, a):
+    def append(self, s):
         """
         Append a new string to the end of the existing string.
 
-        :param a: String to append
+        :param s: String to append
         """
-        self.s += a
+        if is_valid_string(s):
+            self.string = self.string + s
+        else:
+            raise TypeError("String can only be comprised of numeric or alphabetical characters.")
+
+    @property
+    def get_string(self):
+        return self.string
