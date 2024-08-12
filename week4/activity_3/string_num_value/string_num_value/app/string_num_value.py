@@ -59,7 +59,6 @@ class StringNumValue:
             return_value = return_value + char
 
         return return_value
-        # return ord(self.string) - ord('0') if len(self.string) else 0
 
     def set(self, s):
         """
@@ -83,6 +82,13 @@ class StringNumValue:
         else:
             raise TypeError("String can only be comprised of numeric or alphabetical characters.")
 
+    def __str__(self):
+        print()
+
     @property
     def get_string(self):
         return self.string
+
+
+string_num_value = StringNumValue('')
+string_num_value.set('7838958548')

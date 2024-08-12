@@ -66,6 +66,8 @@ class TestStringNumValue(unittest.TestCase):
 
     def test_new_functionality_that_you_invented_for_this_uut(self):
         # You could implement the __str__ method and test that?
+
+        self.uut.__str__()
         pass
 
 
