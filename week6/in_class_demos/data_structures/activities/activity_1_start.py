@@ -10,3 +10,16 @@
 
 # If the stack is empty, it returns None.
 # is_empty(): Returns True if the stack is empty, False otherwise.
+
+class Stack:
+    def __init__(self):  # __init__: Initializes an empty stack
+        ...
+
+    def push(self, item):  # push(item): Adds an item to the top of the stack.
+        ...
+
+    def pop(self):  # pop(): Removes and returns the item at the top of the stack.
+        ...
+
+    def is_empty(self):  # is_empty(): Returns True if the stack is empty, False otherwise.
+        ...
