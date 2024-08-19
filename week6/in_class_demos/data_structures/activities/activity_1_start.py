@@ -13,13 +13,19 @@
 
 class Stack:
     def __init__(self):  # __init__: Initializes an empty stack
-        ...
+        self.stack = []
 
     def push(self, item):  # push(item): Adds an item to the top of the stack.
-        ...
+        self.stack.append(item)
 
     def pop(self):  # pop(): Removes and returns the item at the top of the stack.
-        ...
+        if self.is_empty():
+            return None
+        elif not self.is_empty():
+            return self.stack.pop()
 
     def is_empty(self):  # is_empty(): Returns True if the stack is empty, False otherwise.
-        ...
+        if not self.stack:
+            return True
+        else:
+            return False
